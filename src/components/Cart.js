@@ -13,6 +13,9 @@ export const Cart = () => {
                     {cart.map(item => (
                         <div key={item.id}>
                             <img src={item.image} />
+                            <p>{item.category}</p>
+                            <p>{item.title}</p>
+                            <p>{item.description}</p>
                             <p>{item.price}</p>
                             <button onClick={() =>dispatch({
                             type: 'REMOVE_FROM_CART',
