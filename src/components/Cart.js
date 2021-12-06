@@ -44,7 +44,7 @@ export const Cart = () => {
                     </>
             )}
         </div>
-                <div className='cart_total wrapper'>Total: ${total}</div>
+                <div className='cart_total wrapper'>Total: ${total} ({cart.length} items)</div>
                 <Link to='/checkout' className='center_btn wrapper'>
                         <button className='btn checkout_btn'>Proceed to Checkout</button>
                 </Link>
