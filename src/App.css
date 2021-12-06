@@ -269,7 +269,8 @@ b{
   }
 
   .cart_icon i {
-    font-size: 1rem;
+    font-size: 1.3
+    rem;
   }
 
   .cart_icon span {
@@ -281,6 +282,12 @@ b{
     font-size: .9rem;
   }
 
+  .cart_items {
+    gap: 0rem;
+    flex-direction: column;
+    text-align: center;
+}
+
     .cart_image {
       height: 179px;
       object-fit: cover;
@@ -291,8 +298,8 @@ b{
   }
 
   .prod_detail_img {
-    margin-bottom: 1.5rem;
     height: 283px;
-    object-fit: cover;
-}
+    object-fit: contain;
+    width: 100%;
+  }
 }
