@@ -12,19 +12,10 @@ export const StoreProvider = ({children}) => {
         cart:[]
     })
 
-    // const addToCart = () => {
-    //         setCart(prevCart => [...prevCart, {...products}] )
-    // }
-
-    // const removeFromCart = id => {
-    //     setCart(products.filter(p => p.id !== id))
-    // }
-
     return(
         <StoreContext.Provider value={{
             products,
             setProducts,
-            cart,
             state,
             dispatch
         }}>
