@@ -32,9 +32,6 @@ export const Cart = () => {
                                 })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
-                        <Link to='/checkout'>
-                            <button className='btn checkout_btn'>Proceed to Checkout</button>
-                        </Link>
                         </>
                     ))}
                 </div>
@@ -47,7 +44,10 @@ export const Cart = () => {
                     </>
             )}
         </div>
-        <div className='cart_total wrapper'>Total: ${total}</div>
+                <Link to='/checkout' className='center_btn'>
+                        <button className='btn checkout_btn '>Proceed to Checkout</button>
+                </Link>
+                <div className='cart_total wrapper'>Total: ${total}</div>
       </>
     )
 }
