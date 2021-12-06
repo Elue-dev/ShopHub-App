@@ -5,7 +5,7 @@ import '../App.css'
 
 export const SingleProduct = ({product}) => {
 
-    const {state, dispatch} = useContext(StoreContext)
+    const {state: {cart}, dispatch} = useContext(StoreContext)
 
     return (
         <div className='product'>
@@ -16,7 +16,7 @@ export const SingleProduct = ({product}) => {
                         <Link to={`/products/${product.id}`}>
                             <button className=' btn cart_detail'>View Details</button>
                         </Link>
-                        {state.cart.some(p => p.id === product.id) ? (
+                        {cart.some(p => p.id === product.id) ? (
                             <button onClick={() =>dispatch({
                                 type: 'REMOVE_FROM_CART',
                                 payload: product,

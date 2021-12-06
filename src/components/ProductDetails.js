@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom'
 import { StoreContext } from '../context/StoreContext'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(faSpinner);
 
 export const ProductDetails = ({product}) => {
     const [item, setItem] = useState([])
@@ -21,7 +25,8 @@ export const ProductDetails = ({product}) => {
     }
 
     if(item.title === undefined){
-        return <h1 className='wrapper' style={{marginTop: '1rem'}}>Loading...</h1>
+        return <FontAwesomeIcon icon='spinner' className='spinner' size='3x' spin />
+
     }
 
     return (
@@ -45,7 +50,7 @@ export const ProductDetails = ({product}) => {
                             <button onClick={() =>dispatch({
                                 type: 'ADD_TO_CART',
                                 payload: item,
-                            })} className='btn add_to_cart'>Add To Cart</button>
+                            })} className='btn add_to_cart det'>Add To Cart</button>
                         )}
                     </div>
                 </div>

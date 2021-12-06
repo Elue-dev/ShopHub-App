@@ -6,8 +6,6 @@ export const StoreContext = createContext()
 export const StoreProvider = ({children}) => {
     const [products, setProducts] = useState([])
 
-    const [cart, setCart] = useState([])
-
     const [state, dispatch] = useReducer(StoreReducer, {
         cart:[]
     })

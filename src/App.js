@@ -5,6 +5,7 @@ import { Nav } from './components/Nav';
 import { Cart } from './components/Cart';
 import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
+import { Checkout } from './components/Checkout';
 
 
 
@@ -15,7 +16,8 @@ function App() {
         <Nav />
         <Routes>
             <Route exact path='/' element={<Home />} />
-            <Route exact path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/checkout' element={<Checkout />} />
             <Route path='/products/:id' element={<ProductDetails />} />
         </Routes>
       </Router>

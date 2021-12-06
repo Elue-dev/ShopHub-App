@@ -12,23 +12,30 @@ export const Cart = () => {
     }, [cart])
 
     return (<>
+        <Link to='/'>
+                    <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
+                </Link>
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
-                    {cart.map(item => (
+                    {cart.map(item => (<>
                         <div className='cart_items' key={item.id}>
                             <div className='cart_image_container'>
                                 <img src={item.image} alt={item.title} className='cart_image' />
                             </div>
-                            <div>
+                            <div style={{lineHeight: '2.3'}}>
                                 <p>{item.title}</p>
-                                <p>${item.price}</p>
+                                <p><span>Price:</span> ${item.price}</p>
                                 <button onClick={() =>dispatch({
                                     type: 'REMOVE_FROM_CART',
                                     payload: item,
                                 })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
+                        <Link to='/checkout'>
+                            <button className='btn checkout_btn'>Proceed to Checkout</button>
+                        </Link>
+                        </>
                     ))}
                 </div>
             ) : (
