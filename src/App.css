@@ -288,10 +288,12 @@ b{
     text-align: center;
 }
 
-    .cart_image {
-      height: 179px;
-      object-fit: cover;
-  }
+.cart_image {
+  height: 179px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10%;
+}
 
   .product_detail{
     width: auto;
