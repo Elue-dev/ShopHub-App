@@ -5,7 +5,6 @@ import { Nav } from './components/Nav';
 import { Cart } from './components/Cart';
 import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
-import { Footer } from './components/Footer';
 
 
 
@@ -19,7 +18,6 @@ function App() {
             <Route exact path='/cart' element={<Cart />} />
             <Route path='/products/:id' element={<ProductDetails />} />
         </Routes>
-        {/* <Footer /> */}
       </Router>
     </StoreProvider>
   );

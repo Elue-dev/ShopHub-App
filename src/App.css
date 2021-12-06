@@ -143,6 +143,10 @@ b{
   margin-right: .5rem;
 }
 
+.fa-luggage-cart{
+  color: rgb(26, 182, 230);
+}
+
 .product_detail{
   margin-top: 3rem;
   box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
@@ -210,28 +214,6 @@ b{
   display: grid;
   place-items: center;
 }
-
-/* .footer{
-  background-color: rgb(51, 50, 50);
-  color: #fff;
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.footer_items{
-  padding: .2rem;
-}
-
-.footer_logo{
-  font-size: 1.4rem;
-}
-
-.footer_items span{
-  color: rgb(18, 153, 194);
-  margin-right: .4rem;
-  font-size: 1.1rem;
-
-} */
 
 @media(max-width: 800px) {
     .movie-grid {
