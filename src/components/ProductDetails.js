@@ -32,7 +32,17 @@ export const ProductDetails = ({product}) => {
                     <p>{item.title}</p>
                     <p>{item.description}</p>
                     <p>{item.price}</p>
-                    
+                    {state.cart.some(p => p.id === item.id) ? (
+                        <button onClick={() =>dispatch({
+                            type: 'REMOVE_FROM_CART',
+                            payload: item,
+                        })}>Remove From Cart</button>
+                    ) : (
+                        <button onClick={() =>dispatch({
+                            type: 'ADD_TO_CART',
+                            payload: item,
+                        })}>Add To Cart</button>
+                    )}
                 </div>
         </>
     )
