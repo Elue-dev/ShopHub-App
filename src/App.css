@@ -332,8 +332,7 @@ b{
 .cart_image {
   height: 179px;
   object-fit: cover;
-  width: 100%;
-  border-radius: 50%;
+  border-radius: 0;
 }
 
   .product_detail{
@@ -344,5 +343,9 @@ b{
     height: 283px;
     object-fit: contain;
     width: 100%;
+  }
+
+  .remove_from_cart {
+    padding: .25rem;
   }
 }
