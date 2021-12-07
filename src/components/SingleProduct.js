@@ -17,10 +17,7 @@ export const SingleProduct = ({product}) => {
                             <button className=' btn cart_detail'>View Details</button>
                         </Link>
                         {cart.some(p => p.id === product.id) ? (
-                            <button onClick={() =>dispatch({
-                                type: 'REMOVE_FROM_CART',
-                                payload: product,
-                            })} className='btn remove_from_cart'>Remove From Cart</button>
+                            <Link to='/cart'><button className='btn view_in_cart'>View in Cart</button></Link>
                         ) : (
                             <button onClick={() =>dispatch({
                                 type: 'ADD_TO_CART',

@@ -6,6 +6,11 @@ export const StoreContext = createContext()
 export const StoreProvider = ({children}) => {
     const [products, setProducts] = useState([])
 
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(5)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
     const [state, dispatch] = useReducer(StoreReducer, {
         cart:[]
     })
@@ -14,6 +19,10 @@ export const StoreProvider = ({children}) => {
         <StoreContext.Provider value={{
             products,
             setProducts,
+            currentPage,
+            setCurrentPage,
+            postsPerPage,
+            paginate,
             state,
             dispatch
         }}>

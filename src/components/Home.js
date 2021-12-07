@@ -1,14 +1,16 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import { SingleProduct } from './SingleProduct'
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { Pagination } from './Pagination';
 library.add(faSpinner);
 
 export const Home = () => {
-    const {products, setProducts} = useContext(StoreContext)
+    const {products, setProducts, currentPage, setCurrentPage, postsPerPage, setPostPerPage} = useContext(StoreContext)
+    
 
     useEffect(() => {
         storeData()
@@ -20,6 +22,10 @@ export const Home = () => {
         setProducts(response)
       }
 
+      const indexOfLastPost = currentPage * postsPerPage
+      const indexOfFirstPost = indexOfLastPost - postsPerPage
+      const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
+
     return (
         <>
             {products.length === 0 ? (
@@ -28,11 +34,13 @@ export const Home = () => {
               </div>
             ) : (
               <div className='movie-grid wrapper'>
-                {products.map(product => (
+                {currentPosts.map(product => (<>
                     <SingleProduct product={product} key={product.id} />
+                    </>
                 ))}
               </div>
             )}
+            <Pagination />
         </>
     )
 }

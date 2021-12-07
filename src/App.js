@@ -6,8 +6,7 @@ import { Cart } from './components/Cart';
 import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
 import { Checkout } from './components/Checkout';
-
-
+import { Pagination } from './components/Pagination';
 
 function App() {
   return (

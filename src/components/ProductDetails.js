@@ -42,10 +42,7 @@ export const ProductDetails = ({product}) => {
                         <p><b>Description:</b> {item.description}</p>
                         <p><b>Price:</b> ${item.price}</p>
                         {state.cart.some(p => p.id === item.id) ? (
-                            <button onClick={() =>dispatch({
-                                type: 'REMOVE_FROM_CART',
-                                payload: item,
-                            })} className='btn remove_from_cart'>Remove From Cart</button>
+                             <Link to='/cart'><button className='btn remove_from_cart'>View in Cart</button></Link>
                         ) : (
                             <button onClick={() =>dispatch({
                                 type: 'ADD_TO_CART',
