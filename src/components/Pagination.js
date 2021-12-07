@@ -16,7 +16,7 @@ export const Pagination = () => {
             <ul className='paginate_list wrapper'>
                 {pageNumbers.map(number => (
                     <li key={number}>
-                        <a onClick={()=> paginate(number)} href='#' className='paginate_link'>{number}</a>
+                        <p onClick={()=> paginate(number)} className='paginate_link'>{number}</p>
                     </li>
                 ))}
             </ul>

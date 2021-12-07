@@ -15,7 +15,8 @@ export const Checkout = () => {
 
     return (
         <>
-        {cart.length === 0 ? (<div className='wrapper' style={{marginTop: '2rem'}}>
+        {cart.length === 0 ? (
+            <div className='wrapper' style={{marginTop: '2rem'}}>
                 <Link to='/' className='wrapper keep_shopping'> 
                 <i className="fas fa-arrow-left"></i>Keep Shopping</Link>
                 <h2 className='wrapper' style={{textAlign: 'center', marginTop: '4rem'}}>No items to checkout... <br/>
@@ -25,16 +26,17 @@ export const Checkout = () => {
                 <p onClick={()=> navigate(-1)} className='wrapper keep_shopping'> 
                 <i className="fas fa-arrow-left"></i>Go back</p>
                 <div className='wrapper' style={{textAlign: 'center', marginTop: '4rem'}}>
-                    {cart.map(item => (<>
-                        <div className='checkout_details'>
-                            <p><span>Product: </span>{item.title}</p>
-                            <p><span>Price: </span>${item.price}</p>
-                            <button onClick={() =>dispatch({
-                                    type: 'REMOVE_FROM_CART',
-                                    payload: item,
-                                })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
+                    {cart.map(item => (
+                        <div key={item.id}>
+                            <div className='checkout_details'>
+                                <p><span>Product: </span>{item.title}</p>
+                                <p><span>Price: </span>${item.price}</p>
+                                <button onClick={() =>dispatch({
+                                        type: 'REMOVE_FROM_CART',
+                                        payload: item,
+                                    })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
+                            </div>
                         </div>
-                        </>
                     ))}
                 </div>
             </>

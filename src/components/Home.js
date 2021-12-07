@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import { SingleProduct } from './SingleProduct'
 import '../App.css'
@@ -9,7 +9,7 @@ import { Pagination } from './Pagination';
 library.add(faSpinner);
 
 export const Home = () => {
-    const {products, setProducts, currentPage, setCurrentPage, postsPerPage, setPostPerPage} = useContext(StoreContext)
+    const {products, setProducts, currentPage, postsPerPage} = useContext(StoreContext)
     
 
     useEffect(() => {
@@ -34,9 +34,8 @@ export const Home = () => {
               </div>
             ) : (
               <div className='movie-grid wrapper'>
-                {currentPosts.map(product => (<>
+                {currentPosts.map(product => (
                     <SingleProduct product={product} key={product.id} />
-                    </>
                 ))}
               </div>
             )}

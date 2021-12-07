@@ -18,21 +18,22 @@ export const Cart = () => {
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
-                    {cart.map(item => (<>
-                        <div className='cart_items' key={item.id}>
-                            <div className='cart_image_container'>
-                                <img src={item.image} alt={item.title} className='cart_image' />
-                            </div>
-                            <div style={{lineHeight: '2.3'}}>
-                                <p>{item.title}</p>
-                                <p style={{marginBottom: '.5rem'}}><span>Price:</span> ${item.price}</p>
-                                <button onClick={() =>dispatch({
-                                    type: 'REMOVE_FROM_CART',
-                                    payload: item,
-                                })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
-                            </div>
+                    {cart.map(item => (
+                        <div key={item.id}>
+                                <div className='cart_items'>
+                                    <div className='cart_image_container'>
+                                        <img src={item.image} alt={item.title} className='cart_image' />
+                                    </div>
+                                    <div style={{lineHeight: '2.3'}}>
+                                        <p>{item.title}</p>
+                                        <p style={{marginBottom: '.5rem'}}><span>Price:</span> ${item.price}</p>
+                                        <button onClick={() =>dispatch({
+                                            type: 'REMOVE_FROM_CART',
+                                            payload: item,
+                                        })} className='btn cart_btn'><i className="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
                         </div>
-                        </>
                     ))}
                 </div>
             ) : (
@@ -41,7 +42,7 @@ export const Cart = () => {
                     <Link to='/' className='center_btn'>
                         <button className='btn shop_cart'>Shop Now</button>
                     </Link>
-                    </>
+                </>
             )}
         </div>
                 <div className='cart_total wrapper'><span>Total: ${total}</span>  
