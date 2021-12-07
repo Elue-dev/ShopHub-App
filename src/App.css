@@ -388,4 +388,8 @@ b{
   .paginate_list {
     margin-right: 1rem;
  }
+
+ .paginate_link {
+   margin-right: 1rem;
+ }
 }
