@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useContext } from 'react'
 import './App.css';
 import { Home } from './components/Home';
 import { Nav } from './components/Nav';
@@ -6,7 +7,6 @@ import { Cart } from './components/Cart';
 import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
 import { Checkout } from './components/Checkout';
-import { Pagination } from './components/Pagination';
 
 function App() {
   return (
