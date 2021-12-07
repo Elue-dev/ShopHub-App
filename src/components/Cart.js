@@ -13,8 +13,8 @@ export const Cart = () => {
 
     return (<>
         <Link to='/'>
-                    <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
-                </Link>
+            <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
+        </Link>
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
@@ -25,7 +25,7 @@ export const Cart = () => {
                             </div>
                             <div style={{lineHeight: '2.3'}}>
                                 <p>{item.title}</p>
-                                <p><span>Price:</span> ${item.price}</p>
+                                <p style={{marginBottom: '.5rem'}}><span>Price:</span> ${item.price}</p>
                                 <button onClick={() =>dispatch({
                                     type: 'REMOVE_FROM_CART',
                                     payload: item,
@@ -44,9 +44,11 @@ export const Cart = () => {
                     </>
             )}
         </div>
-                <div className='cart_total wrapper'>Total: ${total} ({cart.length} items)</div>
+                <div className='cart_total wrapper'><span>Total: ${total}</span>  
+                ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
+                </div>
                 <Link to='/checkout' className='center_btn wrapper'>
-                        <button className='btn checkout_btn'>Proceed to Checkout</button>
+                   {cart.length?  <button className='btn checkout_btn'>Proceed to Checkout</button> : ''}
                 </Link>
       </>
     )
