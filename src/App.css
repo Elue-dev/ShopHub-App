@@ -308,7 +308,7 @@ b{
 .payment_page{
   display: grid;
   place-items: center;
-  padding-top: 30%;
+  padding-top: 5%;
 }
 
 @media(max-width: 800px) {
@@ -412,5 +412,9 @@ b{
 
  .paginate_link {
    margin-right: 1rem;
+ }
+
+ .payment_page{
+  padding-top: 50%;
  }
 }
