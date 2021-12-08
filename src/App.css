@@ -388,6 +388,10 @@ b{
 
 @media(max-width: 800px) {
 
+  .nav_items {
+    padding: 1rem 0rem;
+ }
+
   .showcase_text {
     min-width: 600px;
  }
@@ -423,8 +427,8 @@ b{
     font-size: 1rem;
   }
 
-  .nav_items {
-    padding: 1rem 0rem;
+ .showcase {
+  height: 50vh;
  }
 
  .showcase_text {
@@ -440,8 +444,6 @@ b{
   font-size: 1.5rem;
  }
 
-
-
  .showcase_text p {
   font-size: .8rem;
  }
@@ -451,13 +453,26 @@ b{
     width: max-content;
   }
 
+  .movie_grid_title {
+    font-size: 1.5rem;
+ }
+
+ .movie_grid_title::before {
+  bottom: -6px;
+  width: 5.3rem;
+ }
+
   img {
     width: 200px;
     height: 200px;
   }
 
   .logo{
-    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .logo span {
+    font-size: 1.3rem;
   }
 
   .cart_icon i {
