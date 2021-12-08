@@ -2,11 +2,11 @@ import React, { useEffect, useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import { SingleProduct } from './SingleProduct'
 import '../App.css'
-import gif from '../assets/loader3.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { Pagination } from './Pagination';
+import { Showcase } from './Showcase';
 library.add(faSpinner);
 
 
@@ -30,17 +30,20 @@ export const Home = () => {
 
     return (
         <>
+            {products.length > 0 && <Showcase />}
             {products.length === 0 ? (
               <div className='spinner'>
-                {/* <FontAwesomeIcon icon='spinner' size='3x' spin /> */}
-                <img src={gif}></img>
+                <FontAwesomeIcon icon='spinner' size='3x' spin />
               </div>
             ) : (
-              <div className='movie-grid wrapper'>
-                {currentPosts.map(product => (
-                    <SingleProduct product={product} key={product.id} />
-                ))}
-              </div>
+                  <>
+                    <h1 className='movie_grid_title'>Products</h1>
+                    <div className='movie-grid wrapper'>
+                      {currentPosts.map(product => (
+                          <SingleProduct product={product} key={product.id} />
+                      ))}
+                    </div>
+                  </>
             )}
             <Pagination />
         </>

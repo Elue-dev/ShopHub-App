@@ -41,6 +41,23 @@ b{
   color: #fff;
 }
 
+.movie_grid_title{
+  text-align: center;
+  padding-top: 4rem;
+  position: relative;
+}
+
+.movie_grid_title::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 6.3rem;
+  height: 0.3rem;
+  background: rgb(21, 129, 161);;
+  transform: translateX(-50%);
+}
+
 .movie-grid{
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -89,6 +106,7 @@ b{
 .logo{
   font-size: 1.4rem;
   font-weight: 600;
+  font-family: 'Pacifico', cursive;
 }
 
 .logo span{
@@ -100,6 +118,51 @@ b{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.showcase{
+  background: url('../src/assets/showcase.jpg');
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  position: relative;
+}
+
+.showcase::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: -1;
+}
+
+.showcase_text{
+  color: rgb(241, 239, 239);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 2;
+}
+
+.showcase_text h1{
+  font-size: 2.5rem;
+}
+
+.showcase_text p{
+  font-size: 1.2rem;
+}
+
+.showcase_text span{
+  color: rgb(28, 164, 206);
 }
 
 .product img{
@@ -312,6 +375,10 @@ b{
 }
 
 @media(max-width: 800px) {
+
+  .showcase_text {
+    min-width: 600px;
+ }
     .movie-grid {
       grid-template-columns: repeat(2,1fr);
   }
@@ -346,7 +413,26 @@ b{
 
   .nav_items {
     padding: 1rem 0rem;
-}
+ }
+
+ .showcase_text {
+  min-width: 390px;
+ }
+
+ .showcase_text h1 {
+  font-size: 1.5rem;
+  margin-bottom: .2rem;
+ }
+
+ .showcase_text span {
+  font-size: 1.5rem;
+ }
+
+
+
+ .showcase_text p {
+  font-size: .8rem;
+ }
 
   .movie-grid {
     grid-template-columns: 1fr;
