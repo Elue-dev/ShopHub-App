@@ -7,6 +7,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { Pagination } from './Pagination';
 import { Showcase } from './Showcase';
+import { Footer } from './Footer';
 library.add(faSpinner);
 
 
@@ -46,6 +47,7 @@ export const Home = () => {
                   </>
             )}
             <Pagination />
+            {products.length ? <Footer /> : ''}
         </>
     )
 }

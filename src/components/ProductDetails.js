@@ -6,13 +6,14 @@ import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { Footer } from './Footer'
 library.add(faSpinner);
 
 export const ProductDetails = ({product}) => {
     const [item, setItem] = useState([])
     const params = useParams()
 
-    const {state, dispatch} = useContext(StoreContext)
+    const {state: {cart}, dispatch, products} = useContext(StoreContext)
 
     useEffect(() => {
         itemDetail()
@@ -35,13 +36,13 @@ export const ProductDetails = ({product}) => {
                     <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
                 </Link>
                 <div className='product_detail wrapper' key={item.id}>
-                    <div class='product_detail_container'>
+                    <div className='product_detail_container'>
                         <img src={item.image} alt={item.name} className='prod_detail_img' />
                         <p><b>Category:</b> {item.category}</p>
                         <p><b>Name:</b> {item.title}</p>
                         <p><b>Description:</b> {item.description}</p>
                         <p><b>Price:</b> ${item.price}</p>
-                        {state.cart.some(p => p.id === item.id) ? (
+                        {cart.some(p => p.id === item.id) ? (
                              <Link to='/cart'><button className='btn view_in_cart'>View in Cart</button></Link>
                         ) : (
                             <button onClick={() =>dispatch({
@@ -51,6 +52,7 @@ export const ProductDetails = ({product}) => {
                         )}
                     </div>
                 </div>
+                <Footer />
         </>
     )
 }

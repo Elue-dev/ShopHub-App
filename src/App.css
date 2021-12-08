@@ -254,7 +254,7 @@ b{
   margin-top: 3rem;
   box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
   line-height: 2;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .product_detail_container{
@@ -374,6 +374,18 @@ b{
   padding-top: 5%;
 }
 
+.footer{
+  background: #333;
+  color: #fff;
+  text-align: center;
+  margin-top: 5rem;
+  padding: .5rem;
+}
+
+.footer span{
+  color: rgb(28, 164, 206);
+}
+
 @media(max-width: 800px) {
 
   .showcase_text {
@@ -479,6 +491,7 @@ b{
 
   .product_detail{
     width: auto;
+    box-shadow: none;
   }
 
   .prod_detail_img {
