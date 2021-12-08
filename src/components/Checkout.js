@@ -41,8 +41,8 @@ export const Checkout = () => {
                 </div>
             </>
         )}
-         <div className='cart_total wrapper' style={{marginTop: '2rem'}}>Total: ${total}
-           ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
+         <div className='cart_total wrapper' style={{marginTop: '2rem'}}>
+             <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
          </div>
          <Link to='/payment-page' className='center_btn wrapper'>
                 { cart.length ? <button className='btn checkout_btn'>Make Payment</button> : ''}
