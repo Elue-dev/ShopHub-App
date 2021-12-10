@@ -54,7 +54,7 @@ b{
   left: 50%;
   width: 6.3rem;
   height: 0.3rem;
-  background: rgb(21, 129, 161);;
+  background: rgb(21, 129, 161);
   transform: translateX(-50%);
 }
 
@@ -75,6 +75,7 @@ b{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 4px solid rgb(21, 129, 161);
 }
 
 .cart_icon i{
@@ -118,6 +119,17 @@ b{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spin_det{
+  left: 45%;
 }
 
 .showcase{
@@ -198,6 +210,7 @@ b{
   display: block;
   width: 100%;
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .det{
@@ -366,6 +379,30 @@ b{
 
 .checkout_details button{
   margin-top: 1rem;
+}
+
+.payment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.payment_total{
+}
+
+.paid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.paid h1{
+  font-size: 1.2rem;
+  margin-bottom: .8rem;
 }
 
 .payment_page{

@@ -26,7 +26,7 @@ export const ProductDetails = ({product}) => {
     }
 
     if(item.title === undefined){
-        return <FontAwesomeIcon icon='spinner' className='spinner' size='3x' spin />
+        return <FontAwesomeIcon icon='spinner' className='spinner spin_det' size='3x' spin />
 
     }
 
@@ -41,6 +41,7 @@ export const ProductDetails = ({product}) => {
                         <p><b>Category:</b> {item.category}</p>
                         <p><b>Name:</b> {item.title}</p>
                         <p><b>Description:</b> {item.description}</p>
+                        <p><b>Ratings:</b> {item.rating.rate}/5 ({item.rating.count} purchasers)</p>
                         <p><b>Price:</b> ${item.price}</p>
                         {cart.some(p => p.id === item.id) ? (
                              <Link to='/cart'><button className='btn view_in_cart'>View in Cart</button></Link>

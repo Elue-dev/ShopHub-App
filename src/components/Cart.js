@@ -49,7 +49,7 @@ export const Cart = () => {
                     <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
                 </div>
                 <Link to='/checkout' className='center_btn wrapper'>
-                   {cart.length?  <button className='btn checkout_btn'>Proceed to Checkout</button> : ''}
+                   {cart.length ? <button className='btn checkout_btn'>Proceed to Checkout</button> : ''}
                 </Link>
       </>
     )

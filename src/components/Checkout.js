@@ -34,7 +34,7 @@ export const Checkout = () => {
                                 <button onClick={() =>dispatch({
                                         type: 'REMOVE_FROM_CART',
                                         payload: item,
-                                    })} className='btn cart_btn'><i class="fas fa-trash-alt"></i></button>
+                                    })} className='btn cart_btn'><i className="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
                     ))}
@@ -44,7 +44,7 @@ export const Checkout = () => {
          <div className='cart_total wrapper' style={{marginTop: '2rem'}}>
              <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
          </div>
-         <Link to='/payment-page' className='center_btn wrapper'>
+         <Link to='/payment' className='center_btn wrapper'>
                 { cart.length ? <button className='btn checkout_btn'>Make Payment</button> : ''}
          </Link>
         </>

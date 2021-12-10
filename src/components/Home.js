@@ -29,9 +29,15 @@ export const Home = () => {
       const indexOfFirstPost = indexOfLastPost - postsPerPage
       const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
 
+       const showCase = () => {
+        if(products.length > 0 || currentPage === 1){
+          return <Showcase />
+        }
+      }
+
     return (
         <>
-            {products.length > 0 && <Showcase />}
+            {/* {products.length > 0 && <Showcase /> } */}
             {products.length === 0 ? (
               <div className='spinner'>
                 <FontAwesomeIcon icon='spinner' size='3x' spin />
