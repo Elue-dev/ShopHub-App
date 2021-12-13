@@ -6,7 +6,6 @@ import { Cart } from './components/Cart';
 import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
 import { Checkout } from './components/Checkout';
-import { Payment } from './components/Payment';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/products/:id' element={<ProductDetails />} />
-            <Route path='/payment' element={<Payment />} />
         </Routes>
       </Router>
     </StoreProvider>
