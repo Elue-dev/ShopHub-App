@@ -570,7 +570,7 @@ b{
     gap: 0;
     flex-direction: column;
     text-align: center;
-    height: 303px;
+    height: auto;
     line-height: 0;
  }
 
