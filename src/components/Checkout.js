@@ -14,7 +14,9 @@ export const Checkout = () => {
     }, [cart])
 
     const handlePayment = () => {
-        document.querySelector('.overlay').classList.add('show')
+        if(window.confirm('Are you sure you want to make payment?')){
+            document.querySelector('.overlay').classList.add('show')
+        }
     }
 
     const modalClose = () => {
