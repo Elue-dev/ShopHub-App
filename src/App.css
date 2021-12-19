@@ -324,7 +324,7 @@ b{
 .checkout_details{
   box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
   text-align: left;
-  padding: .8rem;
+  padding: .8rem 2rem;
 }
 
 .checkout_details span{
@@ -403,6 +403,27 @@ b{
   opacity: 1;
 }
 
+.error{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  width: 70%;
+  padding: 2rem;
+}
+
+.error h1{
+  font-size: 3rem;
+}
+
+.fa-exclamation-triangle{
+  font-size: 3rem;
+  color: red;
+  padding-bottom: 1rem;
+}
+
 .footer{
   background: #333;
   color: #fff;
@@ -447,6 +468,10 @@ b{
     .fa, .fas {
       font-weight: 900;
       font-size: 1.4rem;
+  }
+
+  .fa-exclamation-triangle{
+    font-size: 4rem;
   }
 }
 
@@ -570,5 +595,17 @@ b{
  .paid h1 {
   text-align: center;
   font-size: 1rem;
+ }
+
+ .error{
+   line-height: 1.8;
+ }
+
+ .error h1{
+   font-size: 2rem;
+ }
+
+ .fa-exclamation-triangle {
+  font-size: 3rem;
  }
 }

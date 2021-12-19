@@ -7,6 +7,7 @@ import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
 import { Checkout } from './components/Checkout';
 import { Payment } from './components/Payment';
+import { ErrorPage } from './components/ErrorPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Nav />
         <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/:error' element={<ErrorPage />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/products/:id' element={<ProductDetails />} />
