@@ -8,7 +8,7 @@ export const Cart = () => {
     const [total, setTotal] = useState()
 
     useEffect(() => {
-        setTotal(cart.reduce((total, current) => total + Number(current.price), 0))
+        setTotal(cart.reduce((total, current) => total + Number(current.price), 0).toFixed(2))
     }, [cart])
 
     return (<>
