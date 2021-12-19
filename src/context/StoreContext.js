@@ -11,10 +11,6 @@ export const StoreProvider = ({children}) => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-    const saveToLocalStorage = (items) => {
-        localStorage.setItem('product', JSON.stringify(items))
-    }
-
     const [state, dispatch] = useReducer(StoreReducer, {
         cart:[]
     })
@@ -27,7 +23,6 @@ export const StoreProvider = ({children}) => {
             setCurrentPage,
             postsPerPage,
             paginate,
-            // saveToLocalStorage,
             state,
             dispatch
         }}>

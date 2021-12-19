@@ -1,18 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { StoreContext } from '../context/StoreContext'
 import '../App.css'
 
 export const SingleProduct = ({product}) => {
 
-    const {state: {cart}, dispatch, setProducts, saveToLocalStorage} = useContext(StoreContext)
-
-    // saveToLocalStorage(...product)
-
-    // useEffect(() => {
-    //     const savedProduct = JSON.parse(localStorage.getItem('product'))
-    //     setProducts(savedProduct)
-    //   },[])
+    const {state: {cart}, dispatch} = useContext(StoreContext)
 
     return (
         <div className='product'>
