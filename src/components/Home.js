@@ -22,6 +22,7 @@ export const Home = () => {
         const storeApi = await fetch ('https://fakestoreapi.com/products')
         const response = await storeApi.json()
         setProducts(response)
+        console.log(response)
       }
 
       const indexOfLastPost = currentPage * postsPerPage
