@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 export const Cart = () => {
-    const {state: {cart}, dispatch} = useContext(StoreContext)
+    const {state: {cart}, dispatch } = useContext(StoreContext)
     const [total, setTotal] = useState()
+    const [cartItems, setCartItems] = useState(cart)
 
     useEffect(() => {
         setTotal(cart.reduce((total, current) => total + Number(current.price), 0).toFixed(2))
@@ -18,7 +19,7 @@ export const Cart = () => {
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
-                    {cart.map(item => (
+                    {cartItems.map(item => (
                         <div key={item.id}>
                                 <div className='cart_items'>
                                     <div className='cart_image_container'>

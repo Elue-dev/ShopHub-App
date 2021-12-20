@@ -271,6 +271,10 @@ b{
   color: #fff;
 }
 
+.rem_btn{
+  font-weight: 700;
+}
+
 .shop_cart{
   background: #333;
   color: #fff;
