@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 export const Cart = () => {
-    const {state: {cart}, dispatch } = useContext(StoreContext)
+    const {state: {cart}, dispatch, products } = useContext(StoreContext)
     const [total, setTotal] = useState()
-    const [cartItems, setCartItems] = useState(cart)
 
     useEffect(() => {
-        setTotal(cart.reduce((total, current) => total + Number(current.price), 0).toFixed(2))
+        setTotal(cart.reduce((total, current) => total + Number(current.price) * current.qty, 0).toFixed(2))
     }, [cart])
 
     return (<>
@@ -19,7 +18,7 @@ export const Cart = () => {
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
-                    {cartItems.map(item => (
+                    {cart.map(item => (
                         <div key={item.id}>
                                 <div className='cart_items'>
                                     <div className='cart_image_container'>
@@ -32,6 +31,14 @@ export const Cart = () => {
                                             type: 'REMOVE_FROM_CART',
                                             payload: item,
                                         })} className='btn cart_btn'><i className="fas fa-trash-alt"></i></button>
+                                        {/* <select onChange={handleChange}>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select> */}
+                                    </div>
+                                    <div>
                                     </div>
                                 </div>
                         </div>
