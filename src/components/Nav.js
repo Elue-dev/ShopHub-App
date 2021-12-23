@@ -19,21 +19,18 @@ export const Nav = () => {
         <div className='nav'>
             <div className='nav_items wrapper'>
                 <Link className='logo' to='/'><i className="fas fa-luggage-cart"></i> Shop<span>Hub</span></Link>
-                {/* {location.pathname !== '/cart' ? 
-                        <div className='cart_icon'><i className="fas fa-shopping-cart"></i><span>{cart.length}</span></div> : null
-            } */}
-            {location.pathname !== '/cart' ? (
-                <div onClick={()=>setShowHideCart(!showHideCart)} className='cart_icon'>
-                 <i className="fas fa-shopping-cart"></i><span>{cart.length}</span>
-                </div>
-            ) : null}
+                {location.pathname !== '/cart' ? (
+                    <div onClick={()=>setShowHideCart(!showHideCart)} className='cart_icon'>
+                    <i className="fas fa-shopping-cart"></i><span>{cart.length}</span>
+                    </div>
+                ) : null}
             </div>
             <div className={showHideCart ? 'showcart show' : 'showcart'}>
                 {cart.length === 0 ? (
                     <div className='empty_cart'>
                         <h3 style={{textAlign: 'center', color: '#000'}}> Your Cart is Empty</h3>
                         <Link to='/' onClick={()=>setShowHideCart(!showHideCart)} className='center_btn shop_btn'>
-                            <button className='btn shop_cart'>Shop Now</button>
+                            <button className='btn shop_cart nav_shop'>Shop Now</button>
                         </Link>
                     </div>
                 ) : (
@@ -57,7 +54,7 @@ export const Nav = () => {
                     </>
                 )}
                 <div className='cart_total wrapper nav_total'>
-                    <span className='black width'>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
+                    <span className='black width'>Total: ${total}</span>
                 </div>
                 {cart.length ? (<div className='nav_btn'>
                         <Link to='/cart'><button onClick={()=>setShowHideCart(false)} className='btn nav_view_in_cart'>View in Cart</button></Link>

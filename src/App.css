@@ -71,6 +71,7 @@ b{
   border: 1px solid #333;
   padding-top: 3rem;
   z-index: 1000;
+  color: #000;
 }
 
 .showcart_wrapper{
@@ -547,7 +548,7 @@ b{
  }
 
  .width {
-  margin-left: 17%;
+  margin-left: 4%;
  }
 
   .showcase_text {
