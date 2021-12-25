@@ -8,6 +8,7 @@ export const Checkout = () => {
     const {state: {cart}, dispatch} = useContext(StoreContext)
 
     const [total, setTotal] = useState()
+    const [showOverlay, setShowOverlay] = useState(false)
 
     useEffect(() => {
         setTotal(cart.reduce((total, current) => total + Number(current.price), 0))
@@ -15,12 +16,11 @@ export const Checkout = () => {
 
     const handlePayment = () => {
         if(window.confirm('Are you sure you want to make payment?')){
-            document.querySelector('.overlay').classList.add('show')
+            setShowOverlay(!showOverlay)
         }
     }
 
     const modalClose = () => {
-        document.querySelector('.overlay').classList.remove('show')
         navigate('/')
         if(cart.length){
             cart.length = []
@@ -29,7 +29,7 @@ export const Checkout = () => {
 
     return (
         <>
-        <div className='overlay'>
+        <div className={showOverlay ? 'overlay show' : 'overlay'}>
             <div className='popup'>
                 {cart.length ? (
                      <div className='paid'>
@@ -82,7 +82,7 @@ export const Checkout = () => {
              <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
          </div>
              <div className='payment wrapper'>
-                { cart.length ? <button onClick={handlePayment} className='btn checkout_btn'>Make Payment</button> : ''}
+                { cart.length ? <button onClick={handlePayment} className='btn checkout_btn'>Make Payment</button> : null }
             </div>
         </>
     )

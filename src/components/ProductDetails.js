@@ -13,7 +13,7 @@ export const ProductDetails = ({product}) => {
     const [item, setItem] = useState([])
     const params = useParams()
 
-    const {state: {cart}, dispatch, products} = useContext(StoreContext)
+    const {state: {cart}, dispatch} = useContext(StoreContext)
 
     useEffect(() => {
         itemDetail()
