@@ -11,7 +11,7 @@ library.add(faSpinner);
 
 
 export const Home = () => {
-    const {products, setProducts, currentPage, postsPerPage} = useContext(StoreContext)
+    const { products, setProducts, currentPage, postsPerPage } = useContext(StoreContext)
     
 
     useEffect(() => {

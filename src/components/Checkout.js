@@ -5,7 +5,7 @@ import '../App.css'
 
 export const Checkout = () => {
     let navigate = useNavigate()
-    const {state: {cart}, dispatch} = useContext(StoreContext)
+    const { state: {cart}, dispatch } = useContext(StoreContext)
 
     const [total, setTotal] = useState()
     const [showOverlay, setShowOverlay] = useState(false)

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 export const Cart = () => {
-    const {state: {cart}, dispatch, products } = useContext(StoreContext)
+    const { state: {cart}, dispatch } = useContext(StoreContext)
     const [total, setTotal] = useState()
 
     useEffect(() => {

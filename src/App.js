@@ -7,7 +7,7 @@ import { ProductDetails } from './components/ProductDetails';
 import { StoreProvider } from './context/StoreContext';
 import { Checkout } from './components/Checkout';
 import { Payment } from './components/Payment';
-import { ErrorPage } from './components/ErrorPage';
+import { Error404 } from './components/Error404';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Nav />
         <Routes>
             <Route exact path='/' element={<Home />} />
-            <Route exact path='/:error' element={<ErrorPage />} />
+            <Route exact path='/:error' element={<Error404 />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/products/:id' element={<ProductDetails />} />

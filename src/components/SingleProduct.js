@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { StoreContext } from '../context/StoreContext'
 import '../App.css'
 
-export const SingleProduct = ({product}) => {
+export const SingleProduct = ({ product }) => {
 
-    const {state: {cart}, dispatch} = useContext(StoreContext)
+    const { state: {cart}, dispatch } = useContext(StoreContext)
 
     return (
         <div className='product'>

@@ -9,11 +9,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { Footer } from './Footer'
 library.add(faSpinner);
 
-export const ProductDetails = ({product}) => {
+export const ProductDetails = () => {
     const [item, setItem] = useState([])
     const params = useParams()
 
-    const {state: {cart}, dispatch} = useContext(StoreContext)
+    const { state: {cart}, dispatch } = useContext(StoreContext)
 
     useEffect(() => {
         itemDetail()

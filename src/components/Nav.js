@@ -5,7 +5,7 @@ import '../App.css'
 
 export const Nav = () => {
 
-    const {state: {cart}, dispatch} = useContext(StoreContext)
+    const { state: {cart}, dispatch } = useContext(StoreContext)
     const location = useLocation()
     const [showHideCart, setShowHideCart] = useState(false)
 
@@ -29,7 +29,7 @@ export const Nav = () => {
                 {cart.length === 0 ? (
                     <div className='empty_cart'>
                         <h3 style={{textAlign: 'center', color: '#000'}}> Your Cart is Empty</h3>
-                        <Link to='/' onClick={()=>setShowHideCart(!showHideCart)} className='center_btn shop_btn'>
+                        <Link to='/' onClick={()=>setShowHideCart(false)} className='center_btn shop_btn'>
                             <button className='btn shop_cart nav_shop'>Shop Now</button>
                         </Link>
                     </div>
