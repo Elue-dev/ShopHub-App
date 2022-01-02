@@ -283,6 +283,22 @@ b{
   font-weight: 700;
 }
 
+.clear_cart_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear{
+  margin-bottom: 1rem;
+  color: crimson;
+  cursor: pointer;
+}
+
+.clear i{
+  color: crimson;
+}
+
 .checkout_btn{
   margin-bottom: 1rem;
   background: rgb(11, 94, 202);

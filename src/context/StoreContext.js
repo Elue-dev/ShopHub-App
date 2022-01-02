@@ -35,7 +35,7 @@ export const StoreProvider = ({children}) => {
             postsPerPage,
             paginate,
             state,
-            dispatch
+            dispatch,
         }}>
             {children}
         </StoreContext.Provider>

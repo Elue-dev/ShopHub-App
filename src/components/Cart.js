@@ -11,6 +11,10 @@ export const Cart = () => {
         setTotal(cart.reduce((total, current) => total + Number(current.price), 0).toFixed(2))
     }, [cart])
 
+    const removeall = () => {
+        cart = []
+    }
+
     return (<>
         <Link to='/'>
             <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
@@ -31,14 +35,6 @@ export const Cart = () => {
                                             type: 'REMOVE_FROM_CART',
                                             payload: item,
                                         })} className='btn cart_btn'><i className="fas fa-trash-alt"></i></button>
-                                        {/* <select onChange={handleChange}>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select> */}
-                                    </div>
-                                    <div>
                                     </div>
                                 </div>
                         </div>
@@ -56,6 +52,14 @@ export const Cart = () => {
                 <div className='cart_total wrapper'>
                     <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
                 </div>
+
+                {cart.length ? (
+                    <div className='clear_cart_wrapper'>
+                    <h2 onClick={()=>dispatch({
+                        type: 'CLEAR_CART',
+                    })} className='clear'><i className="fas fa-trash"></i> Clear cart</h2></div>
+                ) : null}
+
                 <Link to='/checkout' className='center_btn wrapper'>
                    {cart.length ? <button className='btn checkout_btn'>Proceed to Checkout</button> : ''}
                 </Link>

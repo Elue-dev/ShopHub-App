@@ -1,14 +1,13 @@
 import React, { useEffect, useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import { SingleProduct } from './SingleProduct'
+import { Pagination } from './Pagination';
+import { Footer } from './Footer';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { Pagination } from './Pagination';
-import { Footer } from './Footer';
 library.add(faSpinner);
-
 
 export const Home = () => {
     const { products, setProducts, currentPage, postsPerPage } = useContext(StoreContext)
