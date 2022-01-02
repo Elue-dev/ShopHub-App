@@ -373,6 +373,11 @@ b{
   color: #fff;
 }
 
+.disabled{
+  cursor: not-allowed;
+  opacity: .7;
+}
+
 .rem_btn{
   font-weight: 700;
 }
