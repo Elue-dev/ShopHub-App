@@ -5,7 +5,7 @@ import '../App.css'
 
 export const Nav = () => {
 
-    const { state: {cart}, dispatch } = useContext(StoreContext)
+    const { state: {cart} } = useContext(StoreContext)
     const location = useLocation()
     const [showHideCart, setShowHideCart] = useState(false)
 

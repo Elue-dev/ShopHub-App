@@ -11,10 +11,6 @@ export const Cart = () => {
         setTotal(cart.reduce((total, current) => total + Number(current.price) * current.qty, 0).toFixed(2))
     }, [cart])
 
-    const removeall = () => {
-        cart = []
-    }
-
     return (<>
         <Link to='/'>
             <p className='wrapper keep_shopping'> <i className="fas fa-arrow-left"></i>Keep Shopping</p>
@@ -30,21 +26,16 @@ export const Cart = () => {
                                         <img src={item.image} alt={item.title} className='cart_image' />
                                     </div>
                                     <div style={{lineHeight: '2.3'}}>
-                                        <p><span>Product Name: </span>{item.title}</p>
+                                        <p><b>Product Name: </b>{item.title}</p>
                                         <p style={{marginBottom: '.5rem'}}><span>Price:</span> ${item.price}</p>
-                                        <b style={{color: '#000'}}>Quantity:</b> <select onChange={(e)=>dispatch({
+                                        <b style={{color: '#000'}}>Quantity:</b> 
+                                        <input type='number' className='qty' onChange={(e)=>dispatch({
                                             type: 'CHANGE_QTY',
                                             payload: {
                                                 id: item.id,
                                                 qty: e.target.value
                                             }
-                                        })}>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        })} />
                                         <br/>
                                         <button onClick={() =>dispatch({
                                             type: 'REMOVE_FROM_CART',
@@ -52,6 +43,13 @@ export const Cart = () => {
                                         })} className='btn cart_btn'><i className="fas fa-trash-alt"></i></button>
                                     </div>
                                 </div>
+                                {/* dispatch({
+                                            type: 'CHANGE_QTY',
+                                            payload: {
+                                                id: item.id,
+                                                qty: e.target.value
+                                            }
+                                        })}  */}
                         </div>
                     ))}
                 </div>

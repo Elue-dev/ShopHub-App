@@ -15,7 +15,7 @@ button{
   font-family: 'Poppins', sans-serif;
 }
 
-select{
+input{
   font-family: 'Poppins', sans-serif;
 }
 
@@ -383,14 +383,12 @@ b{
   color: #fff;
 }
 
-select{
+.qty{
   padding: .2rem .5rem;
   cursor: pointer;
   margin-bottom: 1rem;
-}
-
-option{
   font-weight: 500;
+  margin-left: 1rem;
 }
 
 .disabled{
