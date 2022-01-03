@@ -354,6 +354,17 @@ b{
   margin-top: 3rem;
 }
 
+.summary{
+  padding-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.checkout{
+  color: #333;
+  padding-bottom: 1rem;
+}
+
 .cart_items{
   display: flex;
   align-items: center;
@@ -383,12 +394,19 @@ b{
   color: #fff;
 }
 
-.qty{
+select{
   padding: .2rem .5rem;
   cursor: pointer;
   margin-bottom: 1rem;
-  font-weight: 500;
-  margin-left: 1rem;
+  font-weight: 700;
+  margin-left: .5rem;
+  border: 2px solid rgb(11, 94, 202);
+  border-radius: .5rem;
+  font-family: 'Poppins, sans-serif';
+}
+
+select:focus{
+  outline: 0;
 }
 
 .disabled{
@@ -763,6 +781,16 @@ b{
  .fa-exclamation-triangle {
   font-size: 3rem;
  }
+
+ .fa-cart-plus,
+.fa-check-double{
+  font-size: 1.1rem;
+  }
+
+  .summary,
+  .checkout{
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 320px){

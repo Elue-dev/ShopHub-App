@@ -63,7 +63,7 @@ export const Checkout = () => {
                 <p onClick={()=> navigate(-1)} className='wrapper keep_shopping'> 
                 <i className="fas fa-arrow-left"></i>Go back</p>
                 <div className='wrapper' style={{textAlign: 'center', marginTop: '4rem'}}>
-                    <h1 style={{paddingBottom: '1rem', color: '#333'}}>CHECKOUT</h1>
+                    <h1 className='checkout' style={{paddingBottom: '1rem', color: '#333'}}>CHECKOUT</h1>
                     {cart.map(item => (
                         <div key={item.id}>
                             <div className='checkout_details'>
