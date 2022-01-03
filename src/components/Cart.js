@@ -8,7 +8,7 @@ export const Cart = () => {
     const [total, setTotal] = useState()
 
     useEffect(() => {
-        setTotal(cart.reduce((total, current) => total + Number(current.price), 0).toFixed(2))
+        setTotal(cart.reduce((total, current) => total + Number(current.price) * current.qty, 0).toFixed(2))
     }, [cart])
 
     const removeall = () => {
@@ -22,6 +22,7 @@ export const Cart = () => {
         <div className='cart wrapper'>
             {cart.length > 0 ? (
                 <div>
+                    <h1 style={{paddingBottom: '1rem', color: '#333', textAlign:'center'}}>SUMMARY</h1>
                     {cart.map(item => (
                         <div key={item.id}>
                                 <div className='cart_items'>
@@ -29,8 +30,22 @@ export const Cart = () => {
                                         <img src={item.image} alt={item.title} className='cart_image' />
                                     </div>
                                     <div style={{lineHeight: '2.3'}}>
-                                        <p>{item.title}</p>
+                                        <p><span>Product Name: </span>{item.title}</p>
                                         <p style={{marginBottom: '.5rem'}}><span>Price:</span> ${item.price}</p>
+                                        <b style={{color: '#000'}}>Quantity:</b> <select onChange={(e)=>dispatch({
+                                            type: 'CHANGE_QTY',
+                                            payload: {
+                                                id: item.id,
+                                                qty: e.target.value
+                                            }
+                                        })}>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <br/>
                                         <button onClick={() =>dispatch({
                                             type: 'REMOVE_FROM_CART',
                                             payload: item,
@@ -50,7 +65,7 @@ export const Cart = () => {
             )}
         </div>
                 <div className='cart_total wrapper'>
-                    <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
+                    <span>Total: ${total}</span> ({cart.length === 1 ? ('1 Product') : `${cart.length} Products`})
                 </div>
 
                 {cart.length ? (

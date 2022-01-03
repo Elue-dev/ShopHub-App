@@ -253,6 +253,12 @@ b{
   margin-bottom: 1rem;
 }
 
+.fa-cart-plus,
+.fa-check-double{
+  font-size: 1.3rem;
+  margin-right: .6rem;
+}
+
 .det{
   width: auto;
   padding: .5rem 1rem;
@@ -371,6 +377,16 @@ b{
 .cart_btn{
   background: crimson;
   color: #fff;
+}
+
+select{
+  padding: .2rem .5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+option{
+  font-weight: 500;
 }
 
 .disabled{

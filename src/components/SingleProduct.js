@@ -21,12 +21,12 @@ export const SingleProduct = ({ product }) => {
                             <button disabled onClick={() =>dispatch({
                                 type: 'REMOVE_FROM_CART',
                                 payload: product,
-                            })} className='btn add_to_cart disabled'>Added to Cart</button>
+                            })} className='btn add_to_cart disabled'><i className="fas fa-check-double"></i> Added to Cart</button>
                         ) : (
                             <button onClick={() =>dispatch({
                                 type: 'ADD_TO_CART',
                                 payload: product,
-                            })} className='btn add_to_cart'>Add To Cart</button>
+                            })} className='btn add_to_cart'><i className="fas fa-cart-plus"></i> Add To Cart</button>
                         )}
                     </div>
 

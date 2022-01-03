@@ -11,7 +11,7 @@ export const Checkout = () => {
     const [showOverlay, setShowOverlay] = useState(false)
 
     useEffect(() => {
-        setTotal(cart.reduce((total, current) => total + Number(current.price), 0))
+        setTotal(cart.reduce((total, current) => total + Number(current.price) * current.qty, 0))
     }, [cart])
 
     const handlePayment = () => {
@@ -63,6 +63,7 @@ export const Checkout = () => {
                 <p onClick={()=> navigate(-1)} className='wrapper keep_shopping'> 
                 <i className="fas fa-arrow-left"></i>Go back</p>
                 <div className='wrapper' style={{textAlign: 'center', marginTop: '4rem'}}>
+                    <h1 style={{paddingBottom: '1rem', color: '#333'}}>CHECKOUT</h1>
                     {cart.map(item => (
                         <div key={item.id}>
                             <div className='checkout_details'>
