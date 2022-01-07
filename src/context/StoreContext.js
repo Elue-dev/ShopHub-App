@@ -12,7 +12,8 @@ export const StoreProvider = ({children}) => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     const [state, dispatch] = useReducer(StoreReducer, {
-        cart:[]
+        cart:[],
+        wishlist: []
     })
 
     // const [state, dispatch] = useReducer(StoreReducer, initialState,  () => {

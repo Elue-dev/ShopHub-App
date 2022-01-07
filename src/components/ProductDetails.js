@@ -11,6 +11,7 @@ library.add(faSpinner);
 
 export const ProductDetails = () => {
     const [item, setItem] = useState([])
+    const [clicked, setClicked] = useState(true)
     const params = useParams()
 
     const { state: {cart}, dispatch } = useContext(StoreContext)
@@ -23,6 +24,10 @@ export const ProductDetails = () => {
         const itemData = await fetch (`https://fakestoreapi.com/products/${params.id}`)
         const response = await itemData.json()
         setItem(response)
+    }
+
+    const setClickedd = () => {
+        setClicked(!clicked)
     }
 
     if(item.title === undefined){
@@ -44,12 +49,12 @@ export const ProductDetails = () => {
                         <p><b>Rating:</b> {item.rating.rate}/5 ({item.rating.count} purchasers)</p>
                         <p><b>Price:</b> ${item.price}</p>
                         {cart.some(p => p.id === item.id) ? (
-                             <Link to='/cart'><button className='btn view_in_cart'>View in Cart</button></Link>
+                                <Link to='/cart'><button className='btn view_in_cart'><i className="fas fa-eye"></i>  View in Cart</button></Link>
                         ) : (
-                            <button onClick={() =>dispatch({
-                                type: 'ADD_TO_CART',
-                                payload: item,
-                            })} className='btn add_to_cart det'>Add To Cart</button>
+                                <button onClick={() =>dispatch({
+                                    type: 'ADD_TO_CART',
+                                    payload: item
+                                })} className='btn add_to_cart det'><i className="fas fa-cart-plus"></i> Add To Cart</button>
                         )}
                     </div>
                 </div>
