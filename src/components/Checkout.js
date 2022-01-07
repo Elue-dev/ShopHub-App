@@ -80,7 +80,7 @@ export const Checkout = () => {
             </>
         )}
          <div className='cart_total wrapper' style={{marginTop: '2rem'}}>
-             <span>Total: ${total}</span> ({cart.length === 1 ? ('1 item') : `${cart.length} items`})
+             <span>Total: ${total}</span> ({cart.length === 1 ? ('1 Product') : `${cart.length} Products`})
          </div>
              <div className='payment wrapper'>
                 { cart.length ? <button onClick={handlePayment} className='btn checkout_btn'>Make Payment</button> : null }
